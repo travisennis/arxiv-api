@@ -1,13 +1,15 @@
 {
   "name": "@travisennis/arxiv-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A library to interact with arxiv api.",
   "type": "module",
   "exports": {
     "types": "./dist/index.d.ts",
     "default": "./dist/index.js"
   },
-  "keywords": ["arxiv"],
+  "keywords": [
+    "arxiv"
+  ],
   "author": "Travis Ennis",
   "license": "MIT",
   "scripts": {
