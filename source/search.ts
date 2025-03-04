@@ -1,21 +1,21 @@
 import { XMLParser } from "fast-xml-parser";
 
 // Types
-type Prefix = "all" | "ti" | "au" | "abs" | "co" | "jr" | "cat" | "rn";
-type SortByOption = "relevance" | "lastUpdatedDate" | "submittedDate";
-type SortOrderOption = "ascending" | "descending";
+export type Prefix = "all" | "ti" | "au" | "abs" | "co" | "jr" | "cat" | "rn";
+export type SortByOption = "relevance" | "lastUpdatedDate" | "submittedDate";
+export type SortOrderOption = "ascending" | "descending";
 
-interface Tag {
+export interface Tag {
   name: string;
   prefix?: Prefix;
 }
 
-interface TagGroup {
+export interface TagGroup {
   include: Tag[];
   exclude?: Tag[];
 }
 
-interface SearchParams {
+export interface SearchParams {
   searchQueryParams: TagGroup[];
   sortBy?: SortByOption | undefined;
   sortOrder?: SortOrderOption | undefined;
@@ -23,18 +23,18 @@ interface SearchParams {
   maxResults?: number;
 }
 
-interface ArxivLink {
+export interface ArxivLink {
   href: string;
   rel: string;
   type: string;
 }
 
-interface ArxivCategory {
+export interface ArxivCategory {
   term: string;
   scheme: string;
 }
 
-interface ArxivEntry {
+export interface ArxivEntry {
   id: string;
   title: string;
   summary: string;
@@ -200,19 +200,3 @@ export async function search({
 
   return Array.isArray(entries) ? entries.map(parseArxivObject) : [];
 }
-
-export function searchFor(query: string) {
-  return search({
-    searchQueryParams: [
-      { include: [{ name: query }, { name: "cs*", prefix: "cat" }] },
-    ],
-    sortBy: "lastUpdatedDate",
-  });
-}
-
-async function main() {
-  const results = await searchFor("ai agent memory");
-  console.info(JSON.stringify(results, null, 2));
-}
-
-main();
