@@ -7,7 +7,7 @@
     "types": "./dist/index.d.ts",
     "default": "./dist/index.js"
   },
-  "keywords": ["cli", "ai", "llm"],
+  "keywords": ["arxiv"],
   "author": "Travis Ennis",
   "license": "MIT",
   "scripts": {
@@ -27,11 +27,11 @@
     "check": "npx npm-check-updates  --interactive --format group"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.3",
-    "@types/node": "^22.7.5",
-    "typescript": "^5.7.0-beta"
+    "@biomejs/biome": "1.9.4",
+    "@types/node": "^22.13.9",
+    "typescript": "^5.8.2"
   },
   "dependencies": {
-    "fast-xml-parser": "^5.0.6"
+    "fast-xml-parser": "^5.0.8"
   }
 }
