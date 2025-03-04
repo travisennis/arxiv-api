@@ -7,9 +7,7 @@
     "types": "./dist/index.d.ts",
     "default": "./dist/index.js"
   },
-  "keywords": [
-    "arxiv"
-  ],
+  "keywords": ["arxiv"],
   "author": "Travis Ennis",
   "license": "MIT",
   "scripts": {
@@ -28,12 +26,15 @@
     "knip": "npx knip",
     "check": "npx npm-check-updates  --interactive --format group"
   },
+  "dependencies": {
+    "fast-xml-parser": "^5.0.8"
+  },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/node": "^22.13.9",
     "typescript": "^5.8.2"
   },
-  "dependencies": {
-    "fast-xml-parser": "^5.0.8"
+  "publishConfig": {
+    "access": "public"
   }
 }
